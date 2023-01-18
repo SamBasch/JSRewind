@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Mutator: A coding challenge</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/prism.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
+            <div class="container-xxl">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/flavicon.svg" height="40" />AppMain
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon-ms">
+                        <i class="bi bi-list"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/app.html">The App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">The Repo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">The Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content container">
+        <div class="row">
+            <h1 class="border-bottom border-2 border-dark-subtle" border->The Code</h1>
+            <!--Source code-->
+            <div class="col-12 col-lg-8">
+                <pre class="line-numbers">
+                    <code class="language-js">
+                        //entry point AKA controller
+
+                        function getUserInput() {
+                            let userInput = document.getElementById('userString').value ;
+                           revString = reverseTheStringFA(userInput);
+                           displayString(revString);
+                        }
+                        
+                        
+                        
+                        //logic function
+                        //reverse string
+                        
+                        
+                        
+                        function reverseTheString(string) {
+                        
+                            let revString = '';
+                        
+                        
+                        
+                            for(let i = string.length - 1; i >= 0; i--) {
+                                   revString += string[i];
+                                   
+                                   
+                            }
+                            return revString;
+                        
+                        }
+                        
+                        
+                        
+                        
+                        
+                        
+                        //view function
+                        function displayString(revString) {
+                            document.getElementById('results').textContent = revString;
+                            document.getElementById('alert').classList.remove('invisible');
+                        
+                        }
+                    </code>
+                </pre>
+            </div>
+            <!--Code Description-->
+            <div class="col-12 col-lg-4">
+                <p>The code is structured in three functions</p>
+                <h5><code>getUserInput()</code></h5>
+                <p>This function serves as the controller or entry point function. It is responsible for retreiving the user input from the web page. It also creates a variable from the return of the reverseTheString. It also is resposible for passing all the parameters to the other two functions.</p>
+                <h5><code>reverseTheString()</code></h5>
+                <p>This function is responsible for taking the string passed by the first function and reversing it. The way this functin does this is by first declaring an empty string to house our revesed string created by the following for loop.</p>
+                <p>The for loop is a 'decrementing' for loop meaning that instead of the index of the for loop starting the scan of the beginning of the array (index 0) it will begin at the end of the array, and decrement the index until it reaches the beginning index of the array. This creates the effect of the for loop scanning the word from the end to the beginning rather than the beginning to the end. </p>
+                <p>With every loop done by the for loop, the current letter the index is on gets accumulated/totaled/added to the reverseString variable we made to house our reversed string</p>
+                <p>The reversed string variable is then returned to the controller function</p>
+                <h5><code>displayString()</code></h5>
+                <p>This function is responsible for displaying the reversed string on the HTML page via a textContent of the elements ID.</p>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="container-fluid py-3">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-lg-3 align-items-center">
+                <div class="col text-center text-secondary text-lg-start order-last order-lg-first">
+                    &copy; 2023 Sam Baschnagel
+                </div>
+                <div class="col text-center">
+                    <img src="/img/WhiteLogoFullSVG.svg" height="55" />
+                </div>
+                <div class="col text-center text-lg-end">
+                    <a href="#"><i class="bi bi-linkedin socialicons"></i></a>
+                    <a href="#"><i class="bi bi-twitter socialicons"></i></a>
+                    <a href="#"><i class="bi bi-youtube socialicons"></i></a>
+                    <a href="#"><i class="bi bi-github socialicons"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="/js/prism.js"></script>
+
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true
+        })
+    </script>
+
+</body>
+
+</html>
