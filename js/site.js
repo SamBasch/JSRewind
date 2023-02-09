@@ -1,9 +1,33 @@
 //entry point AKA controller
 
 function getUserInput() {
+
+
+
+   
     let userInput = document.getElementById('userString').value ;
-   revString = reverseTheStringFA(userInput);
-   displayString(revString);
+
+
+    if(userInput != "") {
+
+        revString = reverseTheStringFA(userInput);
+        displayString(revString);
+
+    } else {
+
+        Swal.fire(
+            {
+                icon: 'error',
+                title: 'Oops!',
+                text: 'please enter a word to check!'
+    
+            }
+        );
+    }
+
+
+
+   
 }
 
 
